@@ -1,0 +1,40 @@
+def read_grades(filename):
+    with open(filename, 'r') as file:
+lines = file.readlines() 
+grades = {}
+for line in lines:
+  name, grade = line.split()
+  grades[names] = int(grade)
+return grades
+def calculate_average(grades):
+  total = sum(grades.values())
+  count = len(grades)
+  return total / count
+def count_above_average(grades, average):
+  count = 0
+  for grade in grades.values():
+     if grade > average:
+        count += 1
+  return count
+def write_results(filename, average, count_above): 
+  with open(filename, 'w') as file:
+  file.write(f'Average grade: {average:.2f}\n')
+  file.write(f'Number of students above average:{count_above}\n')
+def main():
+  grades = read_grades('grades.txt')
+  average = calculate_average(grades)
+  count_above = count_above_average(grades,average)
+  write_results('results.txt', average, count_above)
+if __name__ == '__main__': main() 
+
+
+
+def transform_data(int_list):
+squared_list = [x**2 for x in int_list]
+sum_of_squares = sum(squared_list)
+ return squared_list, sum_of_squares
+
+original_list = [1, 2, 3, 4, 5]
+squared_list, sum_of_squares = transform_data(original_list)
+print("Squared List:", squared_list)
+print("Sum of Squares:", sum_of_squares)
